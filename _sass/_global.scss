@@ -1,7 +1,6 @@
 $color-highlight: rgb(192, 10, 20);
 
 body {
-	color: rgb(230, 230, 230);
 	background-color: rgb(64, 64, 64);
 	height: 100%;
 }
@@ -26,6 +25,6 @@ div.clear {
 .box {
 	background-color: rgb(32, 32, 32);
 	padding: 8px;
-	margin: 4px;
+	margin: 4px 4px 8px 4px;
 	@include box-shadow(rgba(0, 0, 0, 0.5) 0 1px 16px 2px inset, rgba(255, 255, 255, 0.1) 0 1px 0);
 }
