@@ -1,0 +1,22 @@
+$base-font-size: 12pt;
+$h-font-sizes: 200% 180% 160% 140% 120% 110%;
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: $base-font-size;
+
+	@media screen and (min-resolution: 1.1ppx) {
+		font-size: 2 * $base-font-size;
+	}
+
+	@media screen and (min-resolution: 3ppx) {
+		font-size: 3 * $base-font-size;
+	}
+}
+
+@for $i from 1 through 6 {
+	h#{$i}, .header#{$i} {
+		font-weight: bold;
+		font-size: #{nth($h-font-sizes, $i)};
+	}
+}

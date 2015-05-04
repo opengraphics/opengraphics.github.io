@@ -1,0 +1,81 @@
+/* Helpful constructs */
+$small-width: 800px;
+$medium-width: 1080px;
+$column-count: 12;
+$column-width: 100% / 12;
+
+$screen: "only screen";
+$small: "#{$screen} and (max-width: #{$medium-width})";
+$small-up: $small;
+
+$medium: "#{$screen} and (min-width: #{$small-width}) and (max-width: #{$medium-width})";
+$medium-up: "#{screen} and (min-width: #{$small-width})";
+$medium-down: "#{$screen} and (max-width: #{$medium-width})";
+
+$large: "#{$screen}";
+$large-down: $large;
+
+@mixin columns($count, $target:all) {
+	float: left;
+
+	@if target == all {
+		width: 0% + $count * $column-width;
+	} @else {
+		@media #{$target} {
+			width: 0% + $count * $column-width;
+		}
+	}
+}	
+
+/* Columns */
+@for $i from 0 through $column-count {
+	.small-col-#{$i} {
+		@media #{$small} {
+			float: left;
+			width: 0% + $i * $column-width;
+		}
+	}
+
+	.medium-col-#{$i} {
+		@media #{$medium} {
+			float: left;
+			width: 0% + $i * $column-width;
+		}
+	}
+
+	.large-col-#{$i} {
+		@media #{$large} {
+			float: left;
+			width: 0% + $i * $column-width;
+		}
+	}
+
+	.col-#{$i} {
+		float: left;
+		width: 0% + $i * $column-width;
+	}
+}
+
+.row {
+	display: block;
+	clear: both;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+
+	@media #{$large} {
+		max-width: $medium-width;
+	}
+
+	&+.row {
+		margin: 0 8px;
+
+		&.collapse {
+			margin: 0;
+		}
+	}
+
+	[class*="col"]:last-of-type {
+		float: right;
+	}
+}
