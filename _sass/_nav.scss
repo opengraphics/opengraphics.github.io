@@ -37,6 +37,7 @@
 		display: inline-block;
 
 		&::before {
+			font-weight: normal;
 			display: inline-block;
 			float: left;
 			color: $text-color;
@@ -77,6 +78,7 @@
 		}
 
 		.top {
+			padding-top: 4px;
 			padding-bottom: 4px;
 			margin-bottom: 8px;
 			border-bottom: 1px rgba($underline-color, 0.4) solid;
