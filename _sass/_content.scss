@@ -2,5 +2,12 @@
 	@extend .row, .collapse;
 
 	padding: 16px 16px;
-	min-height: 800px;
+
+	@media #{$medium-up} {
+		min-height: 600px;
+	}
+
+	@media #{$small} {
+		padding: 0;
+	}
 }

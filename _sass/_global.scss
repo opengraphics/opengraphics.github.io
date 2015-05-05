@@ -2,6 +2,7 @@ $color-highlight: rgb(192, 10, 20);
 
 body {
 	background-color: rgb(64, 64, 64);
+	width: 100%;
 	height: 100%;
 }
 
@@ -12,6 +13,23 @@ hr {
 	@include box-shadow(rgba(255, 255, 255, 0.1) 0 1px 0);
 
 	margin: 16px 0;
+}
+
+#blackout {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+
+	background-color: black;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
+
+	&.active {
+		visibility: visible;
+		opacity: 0.6;
+		transition-delay: 0s;
+	}
 }
 
 div.clear {
@@ -26,5 +44,10 @@ div.clear {
 	background-color: rgb(32, 32, 32);
 	padding: 16px 8px;
 	margin: 4px 4px 8px 4px;
+
 	@include box-shadow(rgba(0, 0, 0, 0.5) 0 1px 16px 2px inset, rgba(255, 255, 255, 0.1) 0 1px 0);
+
+	@media #{$small} {
+		margin: 4px 0 8px 0;
+	}
 }

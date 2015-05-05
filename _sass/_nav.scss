@@ -1,0 +1,92 @@
+@media #{$medium-up} {
+	div.mobile-nav, .mobile-nav-toggler {
+		display: none;
+	}
+
+	nav.primary {
+		display: inline-block;
+
+		a {
+			position: relative;
+			display: inline-block;
+
+			margin-left: 20px;
+			padding-bottom: 8px;
+
+			&::after {
+				background-color: $text-color;
+				transition: height 0.1s ease-in-out;
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 0;
+			}
+
+			&:hover::after {
+				height: 4px;
+			}
+		}	
+	}
+}
+
+@media #{$small} {
+	.mobile-nav-toggler {
+		text-align: center;
+		display: inline-block;
+
+		&::before {
+			display: inline-block;
+			float: left;
+			color: $text-color;
+			height: 40px;
+			width: 40px;
+			padding: 5px;
+			font-size: 30px;
+			font-family: FontAwesome;
+			content: "\f0c9";
+		}
+	}
+
+	nav.primary {
+		display: none;
+	}
+
+	div.mobile-nav {
+		transition: left 0.5s ease-in-out;
+		top: 0;
+		left: -100%;
+		display: block;
+		position: fixed;
+		font-size: 200%;
+		height: 100%;
+		width: 40%;
+		min-width: 200px;
+		max-width: 100%;
+		padding: 0 8px;
+		background-color: rgb(16, 16, 16);
+		border-right: 1px rgba($text-color, 0.4) solid;
+
+		&.active {
+			left: 0;
+		}
+
+		.mobile-nav-toggler {
+			float: right;
+		}
+
+		.top {
+			padding-bottom: 4px;
+			margin-bottom: 8px;
+			border-bottom: 1px rgba($underline-color, 0.4) solid;
+		}
+
+		.body {
+			a {
+				display: block;
+				height: 1.5em;
+			}
+		}
+	}
+}

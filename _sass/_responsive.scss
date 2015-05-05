@@ -5,15 +5,15 @@ $column-count: 12;
 $column-width: 100% / 12;
 
 $screen: "only screen";
-$small: "#{$screen} and (max-width: #{$medium-width})";
-$small-up: $small;
+$small: "#{$screen} and (max-width: #{$small-width})";
+$small-up: $screen;
 
 $medium: "#{$screen} and (min-width: #{$small-width}) and (max-width: #{$medium-width})";
-$medium-up: "#{screen} and (min-width: #{$small-width})";
+$medium-up: "#{$screen} and (min-width: #{$small-width})";
 $medium-down: "#{$screen} and (max-width: #{$medium-width})";
 
-$large: "#{$screen}";
-$large-down: $large;
+$large: "#{$screen} and (min-width: #{$medium-width})";
+$large-down: $screen;
 
 @mixin columns($count, $target:all) {
 	float: left;
