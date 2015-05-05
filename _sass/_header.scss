@@ -4,6 +4,14 @@ header {
 	.content {
 		@extend .row;
 
+		.mobile-nav-toggler {
+			display: none;
+
+			@media #{$small} {
+				display: inline-block;
+			}
+		}
+
 		nav.primary {
 			display: inline-block;
 			font-size: 200%;
