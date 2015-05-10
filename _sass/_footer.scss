@@ -1,7 +1,11 @@
 footer {
+	@extend .box;
+	
 	padding: 4px 0;
 	margin: 0;
-	@extend .box;
+
+	border-style: none;
+	border-top-style: solid;
 
 	.content {
 		@extend .row;
