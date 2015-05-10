@@ -1,23 +1,62 @@
-$text-color: rgb(230, 230, 230);
-$underline-color: $color-highlight; //rgba(230, 230, 230, 0.3);
 $base-font-size: 12pt;
 $h-font-sizes: 200% 180% 160% 140% 120% 110%;
 
 body {
-	color: $text-color;
+	color: $color-text;
 	font-family: "Open Sans", sans-serif;
 	font-size: $base-font-size;
 }
 
+@for $i from 1 through 6 {
+	h#{$i}, .header#{$i} {
+		line-height: 1;
+		font-size: #{nth($h-font-sizes, $i)};
+		padding-bottom: 0.3em;
+
+		a, a:link, a:visited {
+			color: inherit;
+		}
+
+		@media #{$small} {
+			text-align: center;
+		}
+	}
+}
+
 h1 {
-	border-bottom: 3px rgba($underline-color, 0.6) solid;
-	padding-bottom: 6px;
+	font-weight: bold;
+	border-bottom: 1px $color-border solid;
 	margin-bottom: 12px;
 }
 
-@for $i from 1 through 6 {
-	h#{$i}, .header#{$i} {
-		font-weight: bold;
-		font-size: #{nth($h-font-sizes, $i)};
+h2 {
+	font-weight: bold;
+	border-bottom: 1px $color-soft-border solid;
+	margin-bottom: 8px;
+}
+
+h3 {
+	font-weight: normal;
+	border-bottom: 1px $color-soft-border solid;
+	margin-bottom: 6px;
+}
+
+p {
+	margin-bottom: 1em;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+a {
+	transition: all 0.2s ease-in-out;
+
+	&, &:link, &:visited {
+		color: $color-text-highlight;
+	}
+
+	&:hover, &:active {
+		color: $color-text-active;
 	}
 }

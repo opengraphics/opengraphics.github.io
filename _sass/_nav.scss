@@ -13,8 +13,12 @@
 			margin-left: 20px;
 			padding-bottom: 8px;
 
+			&:hover, &:active {
+				color: lighten($color-text, 10%);
+			}
+
 			&::after {
-				background-color: $text-color;
+				background-color: $color-text;
 				transition: height 0.1s ease-in-out;
 				content: "";
 				position: absolute;
@@ -40,7 +44,7 @@
 			font-weight: normal;
 			display: inline-block;
 			float: left;
-			color: $text-color;
+			color: $color-text;
 			height: 40px;
 			width: 40px;
 			padding: 2px 5px;
@@ -62,12 +66,13 @@
 		position: fixed;
 		font-size: 200%;
 		height: 100%;
-		width: 40%;
-		min-width: 200px;
+		width: 250px;
+		min-width: 40%;
 		max-width: 100%;
 		padding: 0 8px;
-		background-color: rgb(16, 16, 16);
-		border-right: 1px rgba($text-color, 0.4) solid;
+		background-color: $color-bg-primary;
+		border-right: 1px rgba($color-soft-border, 0.4) solid;
+		z-index: 101;
 
 		&.active {
 			left: 0;
@@ -81,13 +86,17 @@
 			padding-top: 4px;
 			padding-bottom: 4px;
 			margin-bottom: 8px;
-			border-bottom: 1px rgba($underline-color, 0.4) solid;
+			border-bottom: 1px rgba($color-border, 0.4) solid;
 		}
 
 		.body {
 			a {
 				display: block;
 				height: 1.5em;
+
+				&, &:link, &:visited {
+					color: $color-text;
+				}
 			}
 		}
 	}

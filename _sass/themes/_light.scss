@@ -1,0 +1,14 @@
+@import "themes/default";
+
+$color-text: rgb(16, 16, 16);
+$color-light-text: rgb(64, 64, 64);
+$color-text-highlight: $color-highlight;
+$color-text-active: lighten($color-text-highlight, 10%);
+
+$color-bg-primary: rgb(230, 230, 230);
+$color-bg-secondary: rgb(200, 200, 200);
+
+$color-border: $color-highlight;
+$color-soft-border: rgba(0, 0, 0, 0.3);
+
+$color-button-active: darken($color-bg-primary, 5%);

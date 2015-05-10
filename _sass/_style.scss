@@ -5,10 +5,14 @@
 @import "prefix";
 @import "responsive";
 
-@import "global";
 @import "typography";
+@import "global";
+
+@import "buttons";
 
 @import "header";
 @import "nav";
 @import "content";
 @import "footer";
+
+@import "syntax";

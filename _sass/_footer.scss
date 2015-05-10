@@ -7,6 +7,7 @@ footer {
 		@extend .row;
 
 		text-align: center;
-		padding: 0.25em 0;
+		word-wrap: normal;
+		padding: 0.25em 8px;
 	}
 }

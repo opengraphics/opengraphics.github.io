@@ -1,0 +1,22 @@
+$buttons: ".button, input[type=button], button";
+
+#{$buttons} {
+	display: inline-block;
+
+	color: $color-text;
+	border: 1px $color-soft-border solid;
+	background-color: $color-bg-primary;
+
+	padding: 4px;
+	margin: 2px;
+
+	@at-root a#{&}, #{&} a {
+		&, &:link, &:active {
+			color: $color-text;
+		}
+
+		&:hover, &:active {
+			background-color: $color-button-active;
+		}
+	}
+}
