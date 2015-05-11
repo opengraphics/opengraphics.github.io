@@ -3,6 +3,7 @@ $small-width: 800px;
 $medium-width: 1080px;
 $column-count: 12;
 $column-width: 100% / 12;
+$gutter-size: 1%;
 
 $screen: "only screen";
 $small: "#{$screen} and (max-width: #{$small-width})";
@@ -15,14 +16,26 @@ $medium-down: "#{$screen} and (max-width: #{$medium-width})";
 $large: "#{$screen} and (min-width: #{$medium-width})";
 $large-down: $screen;
 
-@mixin columns($count, $target:all) {
-	float: left;
-
-	@if target == all {
+@mixin columns($count, $target: "all") {
+	@if target == "all" {
+		float: left;
 		width: 0% + $count * $column-width;
+		margin-left: $gutter-size / 2;
+		margin-right: $gutter-size / 2;
+
+		&.collapse {
+			margin: 0;
+		}
 	} @else {
 		@media #{$target} {
+			float: left;
 			width: 0% + $count * $column-width;
+			margin-left: $gutter-size / 2;
+			margin-right: $gutter-size / 2;
+
+			&.collapse {
+				margin: 0;
+			}
 		}
 	}
 }	
@@ -30,29 +43,19 @@ $large-down: $screen;
 /* Columns */
 @for $i from 0 through $column-count {
 	.small-col-#{$i} {
-		@media #{$small} {
-			float: left;
-			width: 0% + $i * $column-width;
-		}
+		@include columns($i, $small);
 	}
 
 	.medium-col-#{$i} {
-		@media #{$medium} {
-			float: left;
-			width: 0% + $i * $column-width;
-		}
+		@include columns($i, $medium);
 	}
 
 	.large-col-#{$i} {
-		@media #{$large} {
-			float: left;
-			width: 0% + $i * $column-width;
-		}
+		@include columns($i, $large);
 	}
 
 	.col-#{$i} {
-		float: left;
-		width: 0% + $i * $column-width;
+		@include columns($i);
 	}
 }
 
