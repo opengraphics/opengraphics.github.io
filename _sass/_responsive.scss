@@ -19,7 +19,7 @@ $large-down: $screen;
 @mixin columns($count, $target: "all") {
 	@if target == "all" {
 		float: left;
-		width: 0% + $count * $column-width;
+		width: 0% + $count * $column-width - $gutter-size;
 		margin-left: $gutter-size / 2;
 		margin-right: $gutter-size / 2;
 
@@ -29,7 +29,7 @@ $large-down: $screen;
 	} @else {
 		@media #{$target} {
 			float: left;
-			width: 0% + $count * $column-width;
+			width: 0% + $count * $column-width - $gutter-size;
 			margin-left: $gutter-size / 2;
 			margin-right: $gutter-size / 2;
 
