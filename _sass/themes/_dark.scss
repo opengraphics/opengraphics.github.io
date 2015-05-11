@@ -1,14 +1,17 @@
 @import "themes/default";
 
-$color-text: rgb(215, 215, 215);
-$color-light-text: rgb(180, 180, 180);
+$color-border: $color-highlight;
+$color-soft-border: rgba(255, 255, 255, 0.4);
+
+$color-text: rgb(230, 230, 230);
+$color-light-text: rgb(190, 190, 190);
 $color-text-highlight: $color-highlight;
 $color-text-active: lighten($color-text-highlight, 10%);
 
+$color-underline: $color-border;
+$color-soft-underline: $color-soft-border;
+
 $color-bg-primary: rgb(32, 32, 32);
 $color-bg-secondary: rgb(64, 64, 64);
-
-$color-border: $color-highlight;
-$color-soft-border: rgba(255, 255, 255, 0.3);
 
 $color-button-active: lighten($color-bg-primary, 10%);
